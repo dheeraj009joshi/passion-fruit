@@ -1,3 +1,19 @@
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href^='#']");
+  if (!link) return;
+  const target = document.getElementById(link.getAttribute("href").slice(1));
+  if (!target) return;
+  event.preventDefault();
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+});
+
+if (location.hash) {
+  const target = document.getElementById(location.hash.slice(1));
+  if (target) target.scrollIntoView();
+  history.replaceState(null, "", location.pathname + location.search);
+}
+
 const form = document.querySelector("form[name=contact]");
 const note = document.getElementById("form-note");
 
