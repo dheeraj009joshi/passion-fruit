@@ -5,11 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Passion Fruit Voiceovers | Finding Your Voice</title>
   <meta name="description" content="Liz Raphael Helgesen. For more than 40 years, a voice people already know. Today, that same voice helps others find theirs.">
+  <link rel="canonical" href="https://www.passionfruitvo.com/">
+  <meta name="author" content="Liz Raphael Helgesen">
+  <meta name="theme-color" content="#fff6ee">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Passion Fruit Voiceovers">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://www.passionfruitvo.com/">
+  <meta property="og:title" content="Passion Fruit Voiceovers | Finding Your Voice">
+  <meta property="og:description" content="Liz Raphael Helgesen. For more than 40 years, a voice people already know. Today, that same voice helps others find theirs.">
+  <meta property="og:image" content="https://www.passionfruitvo.com/og.jpg">
+  <meta property="og:image:secure_url" content="https://www.passionfruitvo.com/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Liz Raphael Helgesen at the microphone. Finding your voice. Living your truth.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Passion Fruit Voiceovers | Finding Your Voice">
+  <meta name="twitter:description" content="Liz Raphael Helgesen. For more than 40 years, a voice people already know. Today, that same voice helps others find theirs.">
+  <meta name="twitter:image" content="https://www.passionfruitvo.com/og.jpg">
+  <meta name="twitter:image:alt" content="Liz Raphael Helgesen at the microphone. Finding your voice. Living your truth.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Passion Fruit Voiceovers",
+    "url": "https://www.passionfruitvo.com/",
+    "image": "https://www.passionfruitvo.com/og.jpg",
+    "description": "Liz Raphael Helgesen. For more than 40 years, a voice people already know. Today, that same voice helps others find theirs.",
+    "telephone": "+1-770-361-7264",
+    "faxNumber": "+1-770-992-1432",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Liz Raphael Helgesen",
+      "jobTitle": "Voiceover artist and recovery coach"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="comps.css">
-  <link rel="icon" href="current/assets/uploads/2016/04/favicon-1.png" type="image/png">
+  <link rel="icon" href="assets/uploads/2016/04/favicon-1.png" type="image/png">
   <style>
     :root{
       --bg:#fff6ee; --ink:#3a1f18; --muted:#6b4338; --cream:#fff6ee;
@@ -22,16 +65,31 @@
     .band-warm{background:#fff0e4}
     .nav-links a{color:var(--ink)}
     .story p,.about-copy p{max-width:64ch;color:var(--muted);line-height:1.75;margin:0 0 16px;font-size:1.05rem}
+    #coaching h2,#about .about-copy h2{margin-bottom:28px}
     .story p:last-child,.about-copy p:last-child{margin-bottom:0}
     .paths{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
     .path{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 26px}
     .path h3{margin-bottom:10px}
     .path p{color:var(--muted);margin:0 0 8px;line-height:1.65}
     .kicker{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+    .contact-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:36px;align-items:start}
+    .studio-phone{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);color:var(--accent);margin:18px 0 6px;display:block}
+    .studio-meta{color:var(--muted);margin:0}
+    .contact-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 26px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field{display:flex;flex-direction:column;gap:6px;font-size:.78rem;font-weight:700;letter-spacing:.02em}
+    .field.full{grid-column:1 / -1}
+    .field input,.field select,.field textarea{
+      font:500 1rem/1.4 Figtree,sans-serif;color:var(--ink);
+      border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fffaf6;width:100%;
+    }
+    .field textarea{min-height:130px;resize:vertical}
+    .form-note{margin:14px 0 0;font-weight:600;color:var(--ink)}
+    .hp{position:absolute;left:-10000px;height:0;overflow:hidden}
     @media (max-width:980px){
       .nav{flex-wrap:wrap}
       .nav-links{display:flex}
-      .paths{grid-template-columns:1fr}
+      .paths,.contact-layout,.fields{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -71,20 +129,13 @@
         <p class="trust">40+ years on the mic · Voice insured by Lloyd’s of London · Atlanta</p>
       </div>
       <figure class="liz-hero">
-        <img src="current/assets/uploads/2016/04/LRH-64-350.jpg" alt="Liz Raphael Helgesen recording at the microphone">
+        <img src="assets/uploads/2016/04/LRH-64-350.jpg" alt="Liz Raphael Helgesen recording at the microphone">
         <figcaption>Liz Raphael Helgesen</figcaption>
       </figure>
     </div>
   </section>
 
-  <div class="wrap stats">
-    <div class="stat"><strong>40+</strong><span>Years bringing words to life</span></div>
-    <div class="stat"><strong>1 in 4</strong><span>Americans hear this voice daily</span></div>
-    <div class="stat"><strong>35</strong><span>Years of personal recovery</span></div>
-    <div class="stat"><strong>2016</strong><span>Coaching practice begins</span></div>
-  </div>
-
-  <section class="section" style="padding-top:24px">
+  <section class="section">
     <div class="wrap story">
       <p class="label">One thread</p>
       <h2>The same voice. A deeper use.</h2>
@@ -141,12 +192,12 @@
       <h2>This is the voice.</h2>
       <p class="lede">A commercial and a narration, in my voice. Then a few of the people who record with me when a job needs more than one sound.</p>
       <div class="demos">
-        <article class="demo"><h3>Liz · Commercial</h3><p>U.S. English</p><audio controls preload="none" src="current/assets/uploads/2016/04/Liz_Helgesen_Commercial-1.mp3"></audio></article>
-        <article class="demo"><h3>Liz · Narration</h3><p>U.S. English</p><audio controls preload="none" src="current/assets/uploads/2016/04/Liz_Helgesen_-Narration.mp3"></audio></article>
-        <article class="demo"><h3>MARTA Transit</h3><p>On the train</p><audio controls preload="none" src="current/assets/uploads/2016/04/MARTA_final_15_radio_English_052812.wav"></audio></article>
-        <article class="demo"><h3>Bill · Promo</h3><p>U.S. English, male</p><audio controls preload="none" src="current/assets/uploads/2016/04/Bill-Global-Banking-Demo.mp3"></audio></article>
-        <article class="demo"><h3>Maria Howell</h3><p>U.S. English</p><audio controls preload="none" src="current/assets/uploads/2016/04/Maria-Howell-Urban-050911.mp3"></audio></article>
-        <article class="demo"><h3>Cecilia</h3><p>Español neutro</p><audio controls preload="none" src="current/assets/uploads/2016/04/Cecilia_Spanish_-IVR7-19-10.mp3"></audio></article>
+        <article class="demo"><h3>Liz · Commercial</h3><p>U.S. English</p><audio controls preload="none" src="assets/uploads/2016/04/Liz_Helgesen_Commercial-1.mp3"></audio></article>
+        <article class="demo"><h3>Liz · Narration</h3><p>U.S. English</p><audio controls preload="none" src="assets/uploads/2016/04/Liz_Helgesen_-Narration.mp3"></audio></article>
+        <article class="demo"><h3>MARTA Transit</h3><p>On the train</p><audio controls preload="none" src="assets/uploads/2016/04/MARTA_final_15_radio_English_052812.wav"></audio></article>
+        <article class="demo"><h3>Bill · Promo</h3><p>U.S. English, male</p><audio controls preload="none" src="assets/uploads/2016/04/Bill-Global-Banking-Demo.mp3"></audio></article>
+        <article class="demo"><h3>Maria Howell</h3><p>U.S. English</p><audio controls preload="none" src="assets/uploads/2016/04/Maria-Howell-Urban-050911.mp3"></audio></article>
+        <article class="demo"><h3>Cecilia</h3><p>Español neutro</p><audio controls preload="none" src="assets/uploads/2016/04/Cecilia_Spanish_-IVR7-19-10.mp3"></audio></article>
       </div>
     </div>
   </section>
@@ -157,18 +208,18 @@
       <h2>Trusted with this voice.</h2>
       <p class="lede">A few of the names that have put me on the line. Shown for identification.</p>
       <div class="logo-wall">
-        <img src="current/assets/uploads/2016/04/logo-marta-trans-mono.png" alt="MARTA">
-        <img src="current/assets/uploads/2016/04/logo-Coca-Cola-trans-mono.png" alt="Coca-Cola">
-        <img src="current/assets/uploads/2016/04/logo-att-trans-mono-1.png" alt="AT&amp;T">
-        <img src="current/assets/uploads/2016/04/logo-TMobile-mono-1.png" alt="T-Mobile">
-        <img src="current/assets/uploads/2016/04/logo-ibm-mono.png" alt="IBM">
-        <img src="current/assets/uploads/2016/04/logo-bmw-mono.png" alt="BMW">
-        <img src="current/assets/uploads/2016/04/logo-CDC-trans-mono.png" alt="CDC">
-        <img src="current/assets/uploads/2016/04/logo-schwab-trans-123.png" alt="Charles Schwab">
-        <img src="current/assets/uploads/2016/04/logo-lexus2-trans-mono-1.png" alt="Lexus">
-        <img src="current/assets/uploads/2016/04/logo-london_transit-mono.png" alt="London Transit">
-        <img src="current/assets/uploads/2016/04/logo-microsoft-mono.png" alt="Microsoft">
-        <img src="current/assets/uploads/2016/04/logo-nuance-mono.png" alt="Nuance">
+        <img src="assets/uploads/2016/04/logo-marta-trans-mono.png" alt="MARTA">
+        <img src="assets/uploads/2016/04/logo-Coca-Cola-trans-mono.png" alt="Coca-Cola">
+        <img src="assets/uploads/2016/04/logo-att-trans-mono-1.png" alt="AT&amp;T">
+        <img src="assets/uploads/2016/04/logo-TMobile-mono-1.png" alt="T-Mobile">
+        <img src="assets/uploads/2016/04/logo-ibm-mono.png" alt="IBM">
+        <img src="assets/uploads/2016/04/logo-bmw-mono.png" alt="BMW">
+        <img src="assets/uploads/2016/04/logo-CDC-trans-mono.png" alt="CDC">
+        <img src="assets/uploads/2016/04/logo-schwab-trans-123.png" alt="Charles Schwab">
+        <img src="assets/uploads/2016/04/logo-lexus2-trans-mono-1.png" alt="Lexus">
+        <img src="assets/uploads/2016/04/logo-london_transit-mono.png" alt="London Transit">
+        <img src="assets/uploads/2016/04/logo-microsoft-mono.png" alt="Microsoft">
+        <img src="assets/uploads/2016/04/logo-nuance-mono.png" alt="Nuance">
       </div>
     </div>
   </section>
@@ -190,7 +241,7 @@
     <div class="wrap">
       <p class="label">About me</p>
       <div class="team-feature">
-        <img src="current/assets/uploads/2016/04/LRH-64-350.jpg" alt="Liz Raphael Helgesen">
+        <img src="assets/uploads/2016/04/LRH-64-350.jpg" alt="Liz Raphael Helgesen">
         <div class="about-copy">
           <h2>Liz Raphael Helgesen</h2>
           <p>With more than 35 years of personal recovery experience, and professional coaching experience dating back to 2016, I help people create lives that reflect who they truly are and who they want to become.</p>
@@ -217,20 +268,77 @@
       <aside class="awards">
         <p class="label">Press</p>
         <h2 style="font-size:1.55rem;margin-top:8px">They already know this voice.</h2>
-        <img class="press-still" src="current/assets/uploads/2016/04/atlanta_magazine_photo-1.jpg" alt="Atlanta Magazine clipping featuring Liz">
-        <img class="award-still" src="current/assets/uploads/2017/09/Plaque-Liz-dual.png" alt="SOVAS plaque for Liz Helgesen">
+        <img class="press-still" src="assets/uploads/2016/04/atlanta_magazine_photo-1.jpg" alt="Atlanta Magazine clipping featuring Liz">
+        <img class="award-still" src="assets/uploads/2017/09/Plaque-Liz-dual.png" alt="SOVAS plaque for Liz Helgesen">
       </aside>
     </div>
   </section>
 
-  <section class="cta" id="contact">
-    <h2>You don’t have to do it alone.</h2>
-    <p class="lede" style="color:rgba(255,246,238,.82);margin-inline:auto">A voiceover session and a coaching conversation begin the same way. Call, and tell me which voice you need.</p>
-    <div class="actions">
-      <a class="btn btn-primary" href="tel:7709921437">Call 770-992-1437</a>
-      <a class="btn" style="border-color:#fff6ee;color:#fff6ee;border-width:1.5px;border-style:solid" href="#coaching">Coaching</a>
+  <section class="section band-warm" id="contact">
+    <div class="wrap contact-layout">
+      <div>
+        <p class="label">Contact</p>
+        <h2>You don’t have to do it alone.</h2>
+        <p class="lede">A voiceover session and a coaching conversation begin the same way. Call the studio, or send a note and say which one you need.</p>
+        <a class="studio-phone" href="tel:+17703617264">+1 770 361 7264</a>
+        <p class="studio-meta">Fax 770-992-1432<br>Atlanta, Georgia · US Eastern</p>
+      </div>
+      <form class="contact-card" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="fields">
+          <label class="field">Name
+            <input name="name" required autocomplete="name">
+          </label>
+          <label class="field">Email
+            <input name="email" type="email" required autocomplete="email">
+          </label>
+          <label class="field">Phone
+            <input name="phone" type="tel" autocomplete="tel">
+          </label>
+          <label class="field">I need
+            <select name="reason" required>
+              <option value="">Choose one</option>
+              <option>A voiceover session</option>
+              <option>A coaching conversation</option>
+              <option>Both</option>
+            </select>
+          </label>
+          <label class="field full">Message
+            <textarea name="message" required placeholder="The project, the language, or what you hope to work through."></textarea>
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Send the note</button>
+        <p class="form-note" id="form-note" hidden></p>
+      </form>
     </div>
   </section>
-  <footer class="footer"><div class="wrap"><span>© Passion Fruit Voiceovers · Liz Raphael Helgesen · Atlanta</span><span>770-992-1437</span></div></footer>
+  <footer class="footer"><div class="wrap"><span>© Passion Fruit Voiceovers · Liz Raphael Helgesen · Atlanta</span><a href="tel:+17703617264">+1 770 361 7264</a></div></footer>
+  <script>
+    const form = document.querySelector("form[name=contact]");
+    const note = document.getElementById("form-note");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = form.querySelector("button");
+      button.disabled = true;
+      note.hidden = false;
+      note.textContent = "Sending…";
+      try {
+        const body = new URLSearchParams(new FormData(form)).toString();
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body
+        });
+        if (!response.ok) throw new Error("send failed");
+        form.reset();
+        note.textContent = "Received. Liz will be in touch. If it is time-sensitive, call +1 770 361 7264.";
+      } catch (error) {
+        note.textContent = "The note did not send. Please call +1 770 361 7264.";
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
