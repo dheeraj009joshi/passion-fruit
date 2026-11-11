@@ -14,28 +14,73 @@ if (location.hash) {
   history.replaceState(null, "", location.pathname + location.search);
 }
 
+document.querySelectorAll("[data-reel]").forEach((reel) => {
+  const track = reel.querySelector(".reel-track");
+  const slides = [...track.children];
+  const dots = reel.querySelector(".reel-dots");
+  let index = 0;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Show image ${i + 1}`);
+    dot.addEventListener("click", () => show(i));
+    dots.appendChild(dot);
+  });
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let timer;
+
+  function arm() {
+    clearInterval(timer);
+    if (reduceMotion) return;
+    timer = setInterval(() => show(index + 1), 3000);
+  }
+
+  function show(next) {
+    index = (next + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    [...dots.children].forEach((dot, i) => dot.classList.toggle("is-on", i === index));
+    arm();
+  }
+
+  reel.addEventListener("mouseenter", () => clearInterval(timer));
+  reel.addEventListener("mouseleave", arm);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) clearInterval(timer);
+    else arm();
+  });
+
+  reel.querySelector(".reel-prev").addEventListener("click", () => show(index - 1));
+  reel.querySelector(".reel-next").addEventListener("click", () => show(index + 1));
+
+  const viewport = reel.querySelector(".reel-viewport");
+  let startX = 0;
+  viewport.addEventListener("pointerdown", (event) => { startX = event.clientX; });
+  viewport.addEventListener("pointerup", (event) => {
+    const move = event.clientX - startX;
+    if (Math.abs(move) > 40) show(index + (move < 0 ? 1 : -1));
+  });
+
+  show(0);
+});
+
 const form = document.querySelector("form[name=contact]");
 const note = document.getElementById("form-note");
 
-form.addEventListener("submit", async (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const button = form.querySelector("button");
-  button.disabled = true;
+  const data = new FormData(form);
+  const lines = [
+    `Name: ${data.get("name")}`,
+    `Email: ${data.get("email")}`,
+    `Phone: ${data.get("phone") || "—"}`,
+    `I need: ${data.get("reason")}`,
+    "",
+    data.get("message")
+  ];
+  const subject = `New note for Passion Fruit — ${data.get("name")}`;
+  window.location.href = `mailto:liz@passionfruitvo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
   note.hidden = false;
-  note.textContent = "Sending…";
-  try {
-    const body = new URLSearchParams(new FormData(form)).toString();
-    const response = await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body
-    });
-    if (!response.ok) throw new Error("send failed");
-    form.reset();
-    note.textContent = "Received. Liz will be in touch. If it is time-sensitive, call +1 770 361 7264.";
-  } catch (error) {
-    note.textContent = "The note did not send. Please call +1 770 361 7264.";
-  } finally {
-    button.disabled = false;
-  }
+  note.textContent = "Your email app is opening with this note addressed to Liz. Press send there. If nothing opens, call +1 770 361 7264.";
 });

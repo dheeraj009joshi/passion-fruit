@@ -97,14 +97,7 @@
 <body>
   <header class="wrap nav">
     <a class="brand" href="#top">
-      <svg width="38" height="38" viewBox="0 0 80 80" aria-hidden="true">
-        <defs><radialGradient id="f1" cx="35%" cy="35%"><stop offset="0%" stop-color="#ffe3b8"/><stop offset="45%" stop-color="#ff7a3c"/><stop offset="100%" stop-color="#7a1a14"/></radialGradient></defs>
-        <circle cx="40" cy="40" r="38" fill="url(#f1)"/>
-        <circle cx="40" cy="40" r="22" fill="#ff6238"/>
-        <ellipse cx="32" cy="34" rx="3" ry="4" fill="#2a1510"/><ellipse cx="44" cy="38" rx="3" ry="4" fill="#2a1510"/>
-        <ellipse cx="36" cy="46" rx="3" ry="4" fill="#2a1510"/><ellipse cx="48" cy="48" rx="3" ry="4" fill="#2a1510"/>
-        <ellipse cx="42" cy="30" rx="2.5" ry="3.5" fill="#2a1510"/><ellipse cx="30" cy="44" rx="2.5" ry="3.5" fill="#2a1510"/>
-      </svg>
+      <img src="assets/brand/passion-fruit-logo.png" alt="">
       Passion Fruit<small>Voiceovers</small>
     </a>
     <nav class="nav-links">
@@ -198,11 +191,13 @@
     <div class="wrap">
       <p class="label">Hear it</p>
       <h2>This is the voice.</h2>
-      <p class="lede">A commercial and a narration, in my voice. Then a few of the people who record with me when a job needs more than one sound.</p>
+      <p class="lede">A demo reel, a commercial, and a narration, in my voice. Then a few of the people who record with me when a job needs more than one sound.</p>
       <div class="demos">
+        <article class="demo"><h3>Liz · Demo reel</h3><p>U.S. English</p><audio controls preload="none" src="assets/audio/passion-fruit-demo.mp3"></audio></article>
         <article class="demo"><h3>Liz · Commercial</h3><p>U.S. English</p><audio controls preload="none" src="assets/uploads/2016/04/Liz_Helgesen_Commercial-1.mp3"></audio></article>
         <article class="demo"><h3>Liz · Narration</h3><p>U.S. English</p><audio controls preload="none" src="assets/uploads/2016/04/Liz_Helgesen_-Narration.mp3"></audio></article>
         <article class="demo"><h3>MARTA Transit</h3><p>On the train</p><audio controls preload="none" src="assets/uploads/2016/04/MARTA_final_15_radio_English_052812.wav"></audio></article>
+        <article class="demo"><h3>MARTA · Urgent messages</h3><p>On the train</p><audio controls preload="none" src="assets/audio/marta-urgent-messages.mp3"></audio></article>
         <article class="demo"><h3>Bill · Promo</h3><p>U.S. English, male</p><audio controls preload="none" src="assets/uploads/2016/04/Bill-Global-Banking-Demo.mp3"></audio></article>
         <article class="demo"><h3>Maria Howell</h3><p>U.S. English</p><audio controls preload="none" src="assets/uploads/2016/04/Maria-Howell-Urban-050911.mp3"></audio></article>
         <article class="demo"><h3>Cecilia</h3><p>Español neutro</p><audio controls preload="none" src="assets/uploads/2016/04/Cecilia_Spanish_-IVR7-19-10.mp3"></audio></article>
@@ -249,7 +244,7 @@
     <div class="wrap">
       <p class="label">About me</p>
       <div class="team-feature">
-        <img src="assets/uploads/2016/04/LRH-64-350.jpg" alt="Liz Raphael Helgesen">
+        <img class="about-photo" src="assets/about/liz-helgesen.jpg" alt="Liz Raphael Helgesen">
         <div class="about-copy">
           <h2>Liz Raphael Helgesen</h2>
           <p>With more than 35 years of personal recovery experience, and professional coaching experience dating back to 2016, I help people create lives that reflect who they truly are and who they want to become.</p>
@@ -276,8 +271,31 @@
       <aside class="awards">
         <p class="label">Press</p>
         <h2 style="font-size:1.55rem;margin-top:8px">They already know this voice.</h2>
-        <img class="press-still" src="assets/uploads/2016/04/atlanta_magazine_photo-1.jpg" alt="Atlanta Magazine clipping featuring Liz">
-        <img class="award-still" src="assets/uploads/2017/09/Plaque-Liz-dual.png" alt="SOVAS plaque for Liz Helgesen">
+        <div class="reel" data-reel>
+          <div class="reel-viewport">
+            <div class="reel-track">
+              <figure>
+                <img src="assets/press/vanity-fair.jpg" alt="Vanity Fair, Behind the Voices, featuring Liz Raphael Helgesen">
+                <figcaption>Vanity Fair</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/uploads/2016/04/atlanta_magazine_photo-1.jpg" alt="Atlanta Magazine clipping featuring Liz">
+                <figcaption>Atlanta Magazine</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/press/liz-booth.jpg" alt="Liz Raphael Helgesen recording in the studio">
+                <figcaption>In the studio</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/uploads/2017/09/Plaque-Liz-dual.png" alt="SOVAS plaque for Liz Helgesen">
+                <figcaption>SOVAS, 2017</figcaption>
+              </figure>
+            </div>
+          </div>
+          <button class="reel-prev" type="button" aria-label="Previous image">‹</button>
+          <button class="reel-next" type="button" aria-label="Next image">›</button>
+          <div class="reel-dots"></div>
+        </div>
       </aside>
     </div>
   </section>
@@ -291,9 +309,7 @@
         <a class="studio-phone" href="tel:+17703617264">+1 770 361 7264</a>
         <p class="studio-meta">Fax 770-992-1432<br>Atlanta, Georgia · US Eastern</p>
       </div>
-      <form class="contact-card" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <form class="contact-card" name="contact" method="POST" enctype="text/plain" action="mailto:liz@passionfruitvo.com?subject=New%20note%20for%20Passion%20Fruit">
         <div class="fields">
           <label class="field">Name
             <input name="name" required autocomplete="name">
@@ -321,7 +337,7 @@
       </form>
     </div>
   </section>
-  <footer class="footer"><div class="wrap"><span>© Passion Fruit Voiceovers · Liz Raphael Helgesen · Atlanta</span><a href="tel:+17703617264">+1 770 361 7264</a></div></footer>
-  <script src="contact.js"></script>
+  <footer class="footer"><div class="wrap"><span class="footer-brand"><img src="assets/brand/passion-fruit-logo.png" alt="">© Passion Fruit Voiceovers · Liz Raphael Helgesen · Atlanta</span><a href="tel:+17703617264">+1 770 361 7264</a></div></footer>
+  <script src="contact.js?v=4"></script>
 </body>
 </html>
