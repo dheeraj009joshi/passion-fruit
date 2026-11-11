@@ -38,11 +38,18 @@ document.querySelectorAll("[data-reel]").forEach((reel) => {
   }
 
   function show(next) {
+    slides.forEach((slide) => slide.querySelectorAll("video").forEach((video) => video.pause()));
     index = (next + slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
     [...dots.children].forEach((dot, i) => dot.classList.toggle("is-on", i === index));
     arm();
   }
+
+  reel.querySelectorAll("video").forEach((video) => {
+    video.addEventListener("play", () => clearInterval(timer));
+    video.addEventListener("pause", arm);
+    video.addEventListener("ended", arm);
+  });
 
   reel.addEventListener("mouseenter", () => clearInterval(timer));
   reel.addEventListener("mouseleave", arm);

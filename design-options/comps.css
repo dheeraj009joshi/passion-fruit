@@ -74,6 +74,10 @@ h3{font-size:1.25rem}
   padding:10px 14px;border:1px solid var(--line);
 }
 .demo audio,.hear audio{width:100%;margin-top:12px;height:36px}
+.spot{grid-column:1 / -1}
+.spot video,.reel-track video{width:100%;background:#1a120f;display:block}
+.spot video{max-height:420px;border-radius:14px;margin-top:12px}
+.reel-track video{height:240px;object-fit:contain}
 .reel{position:relative;margin-top:18px}
 .reel-viewport{overflow:hidden;border-radius:14px;background:#fff}
 .reel-track{display:flex;transition:transform .35s ease}
