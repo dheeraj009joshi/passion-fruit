@@ -77,7 +77,8 @@ h3{font-size:1.25rem}
   width:100%;height:72px;object-fit:contain;background:#fff;border-radius:14px;
   padding:10px 14px;border:1px solid var(--line);
 }
-.demo audio,.hear audio{width:100%;margin-top:12px;height:36px}
+.demo audio,.hear audio{width:100%;max-width:100%;min-width:0;margin-top:12px;height:36px}
+.demos,.demo,.pillar,.path,.stat{min-width:0}
 .spot{grid-column:1 / -1}
 .spot video,.reel-track video{width:100%;background:#1a120f;display:block}
 .spot video{max-height:420px;border-radius:14px;margin-top:12px}
@@ -102,6 +103,21 @@ h3{font-size:1.25rem}
   .hero,.split,.team-feature{grid-template-columns:1fr}
   .stats,.pillars,.demos,.logo-wall{grid-template-columns:1fr 1fr}
   .nav{flex-wrap:wrap}
+}
+@media (max-width:700px){
+  .wrap{width:min(1180px,calc(100% - 32px))}
+  .section{padding:48px 0}
+  .hero{padding:24px 0 36px;gap:22px}
+  .brand img{width:64px;height:64px}
+  .nav{align-items:flex-start;gap:14px}
+  .nav-links{gap:12px 16px}
+  .stats,.pillars,.demos{grid-template-columns:1fr}
+  .stats{margin-top:28px}
+  .logo-wall{grid-template-columns:1fr 1fr}
+  .pillar,.path{padding:22px 18px}
+  .demo{padding:16px}
+  .spot video{max-height:220px}
+  h1{font-size:2.35rem}
 }
 @media (prefers-reduced-motion:reduce){
   .eyebrow .pulse{animation:none}
