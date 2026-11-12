@@ -1,9 +1,9 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;overflow-x:hidden}
-img,svg{display:block;max-width:100%}
+img,svg,video,audio{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-.wrap{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+.wrap{width:min(1180px,calc(100% - clamp(24px,6vw,48px)));margin-inline:auto;min-width:0}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:600;font-size:1.15rem;line-height:1.1}
 .brand img{width:96px;height:96px;object-fit:contain;flex:none}
@@ -24,7 +24,7 @@ h3{font-size:1.25rem}
 .lede{font-size:1.05rem;color:var(--muted);max-width:38rem;margin:18px 0 0;line-height:1.65}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .trust{margin-top:18px;font-size:.82rem;font-weight:600;color:var(--muted)}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:48px 0 56px;position:relative}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;padding:48px 0 56px;position:relative}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px}
 .stat strong{display:block;font-family:var(--serif);font-size:1.55rem;color:var(--accent);margin-bottom:4px}
@@ -43,7 +43,8 @@ h3{font-size:1.25rem}
 .demo p{margin:4px 0 0;font-size:.78rem;color:var(--muted)}
 .who{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 22%;grid-row:1 / span 2}
 .demo:not(.spot) audio{grid-column:1 / -1}
-.split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:8px}
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:18px;margin-top:8px}
+.split > *{min-width:0;max-width:100%}
 .journal{display:grid;gap:12px}
 .j-card{background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--line)}
 .j-card h3{font-size:1.05rem;margin-bottom:6px}
@@ -52,7 +53,7 @@ h3{font-size:1.25rem}
 .awards .label{color:var(--accent-2)}
 .awards p{opacity:.8;font-size:.9rem;margin:10px 0 0}
 .footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:28px 0;font-size:.82rem;background:var(--footer);color:color-mix(in srgb,var(--cream) 70%,transparent)}
-.footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;width:min(1180px,calc(100% - 48px))}
+.footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;width:min(1180px,calc(100% - clamp(24px,6vw,48px)))}
 .footer-brand{display:flex;align-items:center;gap:12px}
 .footer-brand img{width:44px;height:44px;object-fit:contain;flex:none}
 .liz-hero{margin:0}
@@ -65,7 +66,7 @@ h3{font-size:1.25rem}
   letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
 }
 .team-feature{
-  display:grid;grid-template-columns:.72fr 1.28fr;gap:28px;align-items:center;margin-top:8px;
+  display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:28px;align-items:center;margin-top:8px;
 }
 .team-feature img{
   width:100%;aspect-ratio:3/2;object-fit:cover;object-position:22% 42%;border-radius:24px;
@@ -78,16 +79,17 @@ h3{font-size:1.25rem}
   padding:10px 14px;border:1px solid var(--line);
 }
 .demo audio,.hear audio{width:100%;max-width:100%;min-width:0;margin-top:12px;height:36px}
+.section,.hero,.stats,.pillars,.demos,.logo-wall,.journal,.awards,.paths,.contact-layout{min-width:0;max-width:100%}
 .demos,.demo,.pillar,.path,.stat{min-width:0}
-.spot{grid-column:1 / -1}
-.spot video,.reel-track video{width:100%;background:#1a120f;display:block}
-.spot video{max-height:420px;border-radius:14px;margin-top:12px}
-.reel-track video{height:240px;object-fit:contain}
-.reel{position:relative;margin-top:18px}
-.reel-viewport{overflow:hidden;border-radius:14px;background:#fff}
-.reel-track{display:flex;transition:transform .35s ease}
-.reel-track figure{flex:0 0 100%;margin:0;background:#fff}
-.reel-track img{width:100%;height:240px;object-fit:contain;background:#fff}
+.spot{grid-column:1 / -1;min-width:0}
+.spot video,.reel-track video{width:100%;max-width:100%;background:#1a120f;display:block}
+.spot video{max-height:min(420px,56vw);border-radius:14px;margin-top:12px}
+.reel-track video{height:240px;max-height:56vw;object-fit:contain}
+.reel{position:relative;margin-top:18px;max-width:100%;min-width:0}
+.reel-viewport{overflow:hidden;border-radius:14px;background:#fff;width:100%;max-width:100%}
+.reel-track{display:flex;width:100%;transition:transform .35s ease}
+.reel-track figure{flex:0 0 100%;width:100%;min-width:0;margin:0;background:#fff}
+.reel-track img{width:100%;max-width:100%;height:240px;object-fit:contain;background:#fff}
 .reel-track figcaption{margin:0;padding:8px 12px 12px;text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c463c}
 .reel-prev,.reel-next{
   position:absolute;top:108px;width:34px;height:34px;border:0;border-radius:50%;
@@ -100,24 +102,24 @@ h3{font-size:1.25rem}
 .reel-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(255,246,238,.4);cursor:pointer}
 .reel-dots button.is-on{background:#fff}
 @media (max-width:980px){
-  .hero,.split,.team-feature{grid-template-columns:1fr}
-  .stats,.pillars,.demos,.logo-wall{grid-template-columns:1fr 1fr}
+  .hero,.split,.team-feature{grid-template-columns:minmax(0,1fr)}
+  .stats,.pillars,.demos,.logo-wall{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nav{flex-wrap:wrap}
 }
 @media (max-width:700px){
-  .wrap{width:min(1180px,calc(100% - 32px))}
   .section{padding:48px 0}
   .hero{padding:24px 0 36px;gap:22px}
   .brand img{width:64px;height:64px}
   .nav{align-items:flex-start;gap:14px}
   .nav-links{gap:12px 16px}
-  .stats,.pillars,.demos{grid-template-columns:1fr}
+  .stats,.pillars,.demos{grid-template-columns:minmax(0,1fr)}
   .stats{margin-top:28px}
-  .logo-wall{grid-template-columns:1fr 1fr}
+  .logo-wall{grid-template-columns:repeat(2,minmax(0,1fr))}
   .pillar,.path{padding:22px 18px}
   .demo{padding:16px}
-  .spot video{max-height:220px}
-  h1{font-size:2.35rem}
+  .spot video,.reel-track video,.reel-track img{max-height:220px;height:auto}
+  .reel-track img,.reel-track video{height:200px}
+  h1{font-size:clamp(2rem,10vw,2.35rem)}
 }
 @media (prefers-reduced-motion:reduce){
   .eyebrow .pulse{animation:none}
