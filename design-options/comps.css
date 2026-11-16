@@ -83,9 +83,9 @@ h3{font-size:1.25rem}
 .section,.hero,.stats,.pillars,.demos,.logo-wall,.journal,.awards,.paths,.contact-layout{min-width:0;max-width:100%}
 .demos,.demo,.pillar,.path,.stat{min-width:0}
 .spot{grid-column:1 / -1;min-width:0}
-.spot video,.reel-track video{width:100%;max-width:100%;background:#1a120f;display:block}
+.spot video,.reel-track video{width:100%;max-width:100%;background:#1a120f;display:block;object-fit:contain;aspect-ratio:4/3}
 .spot video{max-height:min(420px,56vw);border-radius:14px;margin-top:12px}
-.reel-track video{height:240px;max-height:56vw;object-fit:contain}
+.reel-track video{height:240px;max-height:56vw}
 .reel{position:relative;margin-top:18px;max-width:100%;min-width:0}
 .reel-viewport{overflow:hidden;border-radius:14px;background:#fff;width:100%;max-width:100%}
 .reel-track{display:flex;width:100%;transition:transform .35s ease}
