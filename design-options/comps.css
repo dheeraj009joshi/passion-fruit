@@ -25,7 +25,7 @@ h3{font-size:1.25rem}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .trust{margin-top:18px;font-size:.82rem;font-weight:600;color:var(--muted)}
 .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;padding:48px 0 56px;position:relative}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px}
 .stat strong{display:block;font-family:var(--serif);font-size:1.55rem;color:var(--accent);margin-bottom:4px}
 .stat span{font-size:.8rem;font-weight:600;color:var(--muted)}
@@ -56,7 +56,7 @@ h3{font-size:1.25rem}
 .footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:28px 0;font-size:.82rem;background:var(--footer);color:color-mix(in srgb,var(--cream) 70%,transparent)}
 .footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;width:min(1180px,calc(100% - clamp(24px,6vw,48px)))}
 .footer-brand{display:flex;align-items:center;gap:12px}
-.footer-brand img{width:44px;height:44px;object-fit:contain;flex:none}
+.footer-brand img{width:96px;height:96px;object-fit:contain;flex:none}
 .liz-hero{margin:0}
 .liz-hero img{
   width:100%;aspect-ratio:3/2;object-fit:cover;object-position:22% 42%;
@@ -110,7 +110,7 @@ h3{font-size:1.25rem}
 @media (max-width:700px){
   .section{padding:48px 0}
   .hero{padding:24px 0 36px;gap:22px}
-  .brand img{width:64px;height:64px}
+  .brand img,.footer-brand img{width:64px;height:64px}
   .nav{align-items:flex-start;gap:14px}
   .nav-links{gap:12px 16px}
   .stats,.pillars,.demos{grid-template-columns:minmax(0,1fr)}
